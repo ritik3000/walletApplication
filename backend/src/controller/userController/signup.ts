@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { prisma } from "../../../prisma";
+import jwt from "jsonwebtoken";
 
 const signUp = async (req: Request, res: Response) => {
   try{
@@ -44,8 +45,28 @@ const signUp = async (req: Request, res: Response) => {
 
     });
 
+    const user = await prisma.user.findUnique({
+      where: { email },
+        select: {
+        id: true,
+      },
+    })
+    if(!user) {
+      throw new Error("Created user not found");
+    }
+
+    const secret = process.env.SECRET_KEY;
+        if (!secret) {
+        throw new Error("SECRET_KEY is not defined.");
+    }
+    const token = jwt.sign({ id: user.id }, secret,
+    {expiresIn: "24h"}
+    );
+
+
     res.status(200).json({
       message: "Successfully Registered",
+      token
     });
     return;
 

@@ -1,0 +1,26 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import { SendMoney } from './pages/SendMoney'
+import { Dashboard } from './pages/Dashboard'
+import { SignUp } from './pages/SignUp'
+import { SignIn } from './pages/SignIn'
+
+
+
+function App() {
+
+  return (
+    <div>
+       <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/send" element={<SendMoney />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+export default App

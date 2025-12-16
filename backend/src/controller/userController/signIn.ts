@@ -37,7 +37,7 @@ const signIn = async (req: Request, res: Response) => {
         throw new Error("SECRET_KEY is not defined.");
         }
         const token = jwt.sign({ id: data.id }, secret,
-        {expiresIn: "1h"}
+        {expiresIn: "24h"}
         );
 
         res.status(200).json({
