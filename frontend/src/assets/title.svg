@@ -1,0 +1,35 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0f172a" />
+
+  <!-- Purse body -->
+  <path
+    d="M160 240
+       Q256 200 352 240
+       L352 360
+       Q256 400 160 360
+       Z"
+    fill="#22c55e"
+  />
+
+  <!-- Purse top -->
+  <rect x="180" y="210" width="152" height="40" rx="20" fill="#16a34a" />
+
+  <!-- Coin -->
+  <circle cx="300" cy="200" r="36" fill="#facc15" />
+  <text
+    x="300"
+    y="212"
+    text-anchor="middle"
+    font-size="28"
+    font-weight="bold"
+    fill="#78350f"
+  >
+    ₹
+  </text>
+</svg>

@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import title from "../assets/title.svg";
 
 export const Appbar = () => {
     const [initials,setInitials] = useState(null)
@@ -28,8 +29,13 @@ export const Appbar = () => {
 
     return (
         <div className="shadow h-14 flex justify-between items-center px-4">
-            <div className="flex flex-col justify-center">
-                PayTM App
+            <div className="flex justify-center">
+                <div>
+                  <img src={title} alt="Paysa" className="h-8 w-8" />
+                  </div>
+                  <div className="mb-2 ml-4 text-2xl">
+                Paysa
+                </div>
             </div>
 
             <div className="flex items-center">
