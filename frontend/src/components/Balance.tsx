@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Button } from "./Button";
 
 interface BalanceProps {
   balance: number | null;
@@ -18,7 +17,6 @@ export const Balance = ({ balance, setBalance }: BalanceProps) => {
             token: localStorage.getItem("token")
         }
         }).then(response => {
-            console.log(response)
               setBalance(response.data.balance)
         })
     }

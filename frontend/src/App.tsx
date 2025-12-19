@@ -4,6 +4,7 @@ import { SendMoney } from './pages/SendMoney'
 import { Dashboard } from './pages/Dashboard'
 import { SignUp } from './pages/SignUp'
 import { SignIn } from './pages/SignIn'
+import { ProtectedRoute } from './components/ProtectedRoute'
 
 
 
@@ -15,8 +16,9 @@ function App() {
         <Routes>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/send" element={<SendMoney />} />
+          <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
+          <Route path="/send" element={<ProtectedRoute element={<SendMoney />} />} />
+          <Route path='/' element={<ProtectedRoute element={<Dashboard />} />} />
         </Routes>
       </BrowserRouter>
     </div>

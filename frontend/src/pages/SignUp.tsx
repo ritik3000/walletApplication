@@ -26,7 +26,7 @@ export const SignUp = () => {
                     onChange={(e) => {setLastName(e.target.value)}}/>
                     <InputBox label="Email" placeholder="ritikdx@amazon.com" 
                     onChange={(e) => {{setEmail(e.target.value)}}}/>
-                    <InputBox label="Password" placeholder="123456" 
+                    <InputBox label="Password" placeholder="123456" visibilityButton={true}
                     onChange={(e) => {{setPassword(e.target.value)}}}/>
                       <div className="pt-4">
                         <Button label="Sign Up" onClick={async () => {

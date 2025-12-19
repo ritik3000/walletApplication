@@ -21,7 +21,7 @@ export const SignIn = () => {
                     <SubHeading label="Enter your information to create an account"/>
                     <InputBox label="Email" placeholder="ritikdx@amazon.com" 
                     onChange={(e) => {setEmail(e.target.value)}}/>
-                     <InputBox label="Password" placeholder="123456" 
+                     <InputBox label="Password" placeholder="123456" visibilityButton={true}
                     onChange={(e) => {{setPassword(e.target.value)}}}/>
                      <div className="pt-4">
                         <Button label="Sign In" onClick={async () => {
