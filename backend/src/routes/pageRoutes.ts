@@ -7,6 +7,7 @@ import transfer from "../controller/accountController/transfer";
 import authMiddleware from "../middlewares/authMiddleware";
 import topUp from "../controller/accountController/topUp";
 import balance from "../controller/accountController/balance";
+import userDetails from "../controller/userController/userDetails";
 
 
 const router = Router();
@@ -16,6 +17,7 @@ router.get("/bulkUsers", findBulkUsers);
 router.post("/transfer", authMiddleware, transfer);
 router.post("/topUp", authMiddleware, topUp);
 router.get("/balance", authMiddleware, balance);
+router.get("/userdetails",authMiddleware, userDetails)
 
 
 
