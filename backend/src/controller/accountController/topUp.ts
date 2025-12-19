@@ -17,9 +17,6 @@ const topUp =  async (req:Request, res: Response) => {
         throw new Error("Wallet doesn't exist");
       }
 
-      if (wallet.amount < amount) {
-        throw new Error("Insufficient balance");
-      }
 
       await prisma.wallet.update({
         where: { userId: userId },

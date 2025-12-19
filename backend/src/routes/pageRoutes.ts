@@ -13,7 +13,7 @@ import userDetails from "../controller/userController/userDetails";
 const router = Router();
 router.post("/signup",signUp);
 router.post("/signin", signIn);
-router.get("/bulkUsers", findBulkUsers);
+router.get("/bulkUsers", authMiddleware, findBulkUsers);
 router.post("/transfer", authMiddleware, transfer);
 router.post("/topUp", authMiddleware, topUp);
 router.get("/balance", authMiddleware, balance);
