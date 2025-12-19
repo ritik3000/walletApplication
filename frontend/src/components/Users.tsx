@@ -16,7 +16,11 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
         useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/bulkUsers?filter=" + filter)
+        axios.get("http://localhost:3000/api/v1/bulkUsers?filter=" + filter, {
+          headers: {
+            token: localStorage.getItem("token"),
+          },
+        })
             .then(response => {
                 setUsers(response.data.users)
             })
@@ -44,7 +48,7 @@ function UserCard({user}: {user: User}) {
         <div className="flex">
             <div className="rounded-full h-12 w-12 bg-slate-200 flex justify-center mt-4 mr-2">
                 <div className="flex flex-col justify-center h-full text-xl">
-                    {user.firstName[0]}
+                    {user.firstName[0].toUpperCase() +user.lastName[0].toUpperCase()}
                 </div>
             </div>
             <div className="flex flex-col justify-center h-full mt-2">
